@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1443px" height="473px" viewBox="0 0 1443 473" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46.2 (44496) - http://www.bohemiancoding.com/sketch -->
+    <title>Home</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M701.621987,90 C701.621987,90 560.637612,-5.51081296e-08 427.580204,-2.84217094e-14 C294.522795,5.51080781e-08 212.460811,99.7109629 37.0843684,99.7109654 C-138.292074,99.710968 365.302465,164 365.302465,164 L701.580606,107.905791 L701.621987,90 Z" id="path-1"></path>
+    </defs>
+    <g id="🌴-Valencia" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Home" transform="translate(0.000000, -4154.000000)">
+            <g id="Footer" transform="translate(-217.000000, 4154.000000)">
+                <path d="M540.994612,121 C422.758096,121 397.621553,183.914184 305.962725,183.914184 C214.303896,183.914184 514.174832,229 514.174832,229 L727.5,189.661204 C727.5,189.661204 659.231128,121 540.994612,121 Z" id="Path-29" fill="#FFB700" transform="translate(508.020690, 175.000000) scale(-1, 1) translate(-508.020690, -175.000000) "></path>
+                <g id="Rectangle-3" transform="translate(0.000000, 84.000000)">
+                    <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <use id="Mask" fill="#738DA0" transform="translate(350.810993, 82.000000) scale(-1, 1) translate(-350.810993, -82.000000) " xlink:href="#path-1"></use>
+                </g>
+                <circle id="Oval-2" fill="#D9A724" cx="436.320312" cy="44.3203125" r="39.3203125"></circle>
+                <path d="M503.123236,209 L217,209 L217,638 L1657,638 L1657,225.412211 L1659.25,224.960938 L1659.32031,144.9375 C1659.32031,144.9375 1463.53127,24.9375001 1199.69605,24.9375 C935.860827,24.9374999 775.671875,208.21875 530.164062,208.21875 C519.063599,208.21875 510.10705,208.48726 503.123236,209 Z" id="Combined-Shape" fill="#FFD363"></path>
+            </g>
+        </g>
+    </g>
+</svg>

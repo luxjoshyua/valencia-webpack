@@ -1,0 +1,368 @@
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@font-face {
+  font-family: "HK Grotesk SemiBold";
+  src: url(../assets/hkgrotesk-semibold-webfont.woff),
+    url(../assets/hkgrotesk-semibold-webfont.woff2);
+}
+
+@font-face {
+  font-family: "HK Grotesk Bold";
+  src: url(../assets/hkgrotesk-bold-webfont.woff),
+    url(../assets/hkgrotesk-bold-webfont.woff2);
+}
+
+body {
+  font-family: "HK Grotesk SemiBold", Arial, Helvetica, sans-serif;
+  font-size: 24px;
+  line-height: 1.5;
+  color: #fff;
+  /* background-color: #ecc7ab; */
+  background-color: #ff6e00;
+  margin: 0 auto;
+  transition: background-color 1s;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+a,
+body {
+  cursor: url(../assets/cursor-pizza-white.png), auto;
+}
+
+h2,
+h3,
+p,
+.fade-in-img img,
+a,
+h6 {
+  opacity: 0;
+}
+
+/* progress bars */
+
+div.progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 10px;
+  background-color: #be3c52;
+  /* all elements by default have a z-index of 0  */
+  z-index: 1;
+  transition: background-color 0.5s;
+}
+
+/* this is what we target in the JS for the progress bar */
+/* div.progress.white {
+  background-color: #be3c52;
+} */
+
+img {
+  position: relative;
+  z-index: -2;
+}
+
+.menu {
+  background-color: #ffd363;
+  width: 100%;
+  position: fixed;
+  z-index: 2;
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  transform: translateX(100%);
+  transition: transform 0.6s ease;
+}
+
+.open {
+  transform: translateX(0);
+}
+
+a.menu-toggle {
+  position: absolute;
+  z-index: 3;
+  top: 30px;
+  right: 30px;
+  opacity: 1 !important;
+  animation: none !important;
+  img {
+    position: relative;
+    z-index: 100;
+  }
+}
+
+.left {
+  position: absolute;
+  z-index: 3;
+  top: 30px;
+  left: 30px;
+  width: fit-content;
+  h3 {
+  }
+}
+
+@media only screen and (max-width: 760px) {
+  .left {
+    right: -70px;
+  }
+}
+
+.left h3 {
+  font-size: 42px;
+}
+
+.menu-links {
+  position: relative;
+  transform: translate(-10%, 50%);
+}
+
+ul,
+li {
+  list-style-type: none;
+}
+
+ul > li {
+  font-size: 120px;
+  line-height: 1.1;
+  text-align: right;
+}
+
+li a:hover {
+  cursor: pointer;
+  color: #ffd363;
+  -webkit-text-stroke: 3px #fff;
+}
+
+div.social-links-nav {
+  position: relative;
+  transform: translate(-10%, 215%);
+}
+
+.social-links-nav ul li {
+  font-size: 34px;
+  text-align: right;
+}
+
+.social-links-nav ul li a:hover {
+  -webkit-text-stroke: 2px #fff;
+}
+
+/* first section */
+
+section {
+  position: relative;
+  min-height: 100vh;
+  padding: 80px 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+section.natural {
+}
+
+@media only screen and (max-width: 760px) {
+  .natural {
+    justify-content: space-between;
+  }
+}
+
+div.content {
+  position: relative;
+}
+
+.content .copy {
+  position: absolute;
+  left: 60%;
+  top: 50%;
+  width: 550px;
+  transform: translateY(-60%);
+}
+
+div.copy h2,
+div.copy-two h2,
+div.copy-three h2,
+div.copy-four h2 {
+  font-size: 120px;
+  line-height: 1;
+}
+
+div.circle {
+  position: absolute;
+  top: 50px;
+  left: -50px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: #d9a724;
+}
+
+div.square {
+  position: absolute;
+  left: 150px;
+  bottom: -50px;
+  width: 115px;
+  height: 115px;
+  background-color: #5982a0;
+}
+
+div.square-two {
+  position: absolute;
+  top: 250px;
+  right: -50px;
+  bottom: -50px;
+  width: 115px;
+  height: 115px;
+  background-color: #5982a0;
+}
+
+/* second section */
+
+section.doing {
+}
+
+section.doing.content {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content .copy-two {
+  position: absolute;
+  right: 75%;
+  top: 50%;
+  width: 550px;
+  transform: translateY(15%);
+}
+
+div.copy-two h6 {
+  font-size: 26px;
+  max-width: 400px;
+  margin-top: 40px;
+}
+
+section.s2 div.circle {
+  background-color: #be3c52;
+}
+
+section.s2 div.square {
+  background-color: #5f3736;
+}
+
+/* third section */
+
+section.lookbook {
+  background-image: url(../assets/image_3.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+div.copy-three {
+  position: relative;
+  max-width: 500px;
+  text-align: center;
+}
+
+div.copy-three h2 a:hover,
+div.copy-four h2 a:hover {
+  cursor: pointer;
+  color: transparent;
+  -webkit-text-stroke: 3px #fff;
+}
+
+/* fourth section */
+
+.content .copy-four {
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  width: 550px;
+  transform: translate(-65%, -45%);
+}
+
+section.s4 div.circle {
+  background-color: #6e5f67;
+}
+
+section.s4 div.square-two {
+  background-color: #d54156 !important;
+}
+
+/* footer */
+
+footer {
+  margin-top: 250px;
+  height: 60vh;
+  padding: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url(../assets/footer.svg);
+  background-size: cover;
+}
+
+@media only screen and (max-width: 760px) {
+  footer {
+    padding: 24px 16px;
+  }
+}
+
+div.social-links-footer {
+  position: relative;
+  top: 30%;
+  display: flex;
+}
+
+div.social-links-footer a {
+  margin-right: 25px;
+  font-size: 75px;
+}
+
+div.social-links-footer a:hover {
+  cursor: pointer;
+  color: #ffd363;
+  -webkit-text-stroke: 2px #fff;
+}
+
+div.social-links-footer a:last-of-type {
+  margin-right: 0px;
+}
+
+/* stamps */
+
+div.stamps {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 50%;
+}
+
+div.stamps img {
+  position: absolute;
+  /* centre the img in the middle of where we click */
+  transform: translate(-50%, -50%);
+  animation: spin 30s linear infinite;
+}
