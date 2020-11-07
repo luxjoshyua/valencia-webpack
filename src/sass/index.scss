@@ -1,0 +1,41 @@
+@import "~bootstrap/scss/bootstrap";
+@import "media-queries";
+@import "variables";
+@import "utilities";
+@import "fonts";
+@import "sections";
+@import "hero";
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+.container {
+  background-color: lightgreen;
+  div {
+    h1 {
+      font-size: 10rem;
+    }
+  }
+}

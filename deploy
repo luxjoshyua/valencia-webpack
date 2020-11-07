@@ -1,0 +1,17 @@
+#!/bin/bash
+GIT="https://github.com/luxjoshyua/portfolio.git"
+# Get todays date
+NOW=$(date +“%d-%m-%Y”)
+echo $NOW
+npm run build
+cd dist
+git init
+git remote add origin $GIT
+git checkout -b gh-pages
+git status
+pwd
+git add .
+git status
+git commit -m "build $NOW"
+git push origin head --force
+exit 0
