@@ -1,7 +1,6 @@
-const sections = document.querySelectorAll("spring-sec");
-
+const sections = document.querySelectorAll(".spring-sec");
 // background-colour selector
-const bodyTag = document.querySelector("body");
+const bodyTag = document.querySelector("body.spring");
 
 const addMovement = function () {
   // how far down the page we are
@@ -11,7 +10,9 @@ const addMovement = function () {
 
   // let's find the middle of each section
   // (section, index) => {}
+
   sections.forEach((section, index) => {
+    // console.log("what this", section);
     const topSection = section.offsetTop;
 
     const midSection = topSection + section.offsetHeight / 2;
@@ -25,7 +26,7 @@ const addMovement = function () {
 
     const image = section.querySelector("img");
 
-    const contentTag = section.querySelector("div");
+    const contentTag = section.querySelector("div.content");
 
     // weight down this distance
 

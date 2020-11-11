@@ -2,10 +2,10 @@
 // finds the div with a class of pixels
 const pixelsTag = document.querySelector("div.pixels");
 // find the body
-// const bodyTag = document.querySelector("body")
+const bodyTag = document.querySelector("body.spring");
 const progressTag = document.querySelector("div.progress");
 
-// const sections = document.querySelectorAll("section")
+const sections = document.querySelectorAll("section.spring-sec");
 // using querySelector just selects the one
 const clientTag = document.querySelector("div.client");
 
@@ -24,7 +24,9 @@ document.addEventListener("scroll", function () {
   // console.log(pixels)
 
   // changes the pixels tag to be the value of the pixels
-  pixelsTag.innerHTML = pixels + " pixels scrolled";
+  if (pixelsTag) {
+    pixelsTag.innerHTML = pixels + " pixels scrolled";
+  }
 
   // pixelsTag.innerHTML = `${pixels} pixels scrolled`
 });
@@ -35,23 +37,24 @@ document.addEventListener("scroll", function () {
   // because it's in the same box
   const pixels = window.pageYOffset;
 
-  // gives you the height of 3200
-  const pageHeight = bodyTag.getBoundingClientRect().height;
+  if (bodyTag) {
+    // gives you the height of 3200
+    const pageHeight = bodyTag.getBoundingClientRect().height;
+    // find the total scrollable distance which is
+    // page height - window height
 
-  // find the total scrollable distance which is
-  // page height - window height
+    const totalScrollableDistance = pageHeight - window.innerHeight;
 
-  const totalScrollableDistance = pageHeight - window.innerHeight;
+    // pixels divided by total scrollable distance/entire thing
 
-  // pixels divided by total scrollable distance/entire thing
+    const percentage = pixels / totalScrollableDistance;
 
-  const percentage = pixels / totalScrollableDistance;
+    // gives you scrollbars going down the page
+    // progressTag.style.width = "5px"
+    // progressTag.style.height = `${100 * percentage}%`
 
-  // gives you scrollbars going down the page
-  // progressTag.style.width = "5px"
-  // progressTag.style.height = `${100 * percentage}%`
-
-  progressTag.style.width = `${100 * percentage}%`;
+    progressTag.style.width = `${100 * percentage}%`;
+  }
 });
 
 // data is dark
@@ -95,6 +98,7 @@ document.addEventListener("scroll", function () {
   // console.log(midViewport)
 
   sections.forEach((section) => {
+    console.log("reaching here");
     const topSection = section.offsetTop;
 
     const midSection = topSection + section.offsetHeight / 2;

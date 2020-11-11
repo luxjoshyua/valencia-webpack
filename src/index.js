@@ -2,14 +2,15 @@ import style from "./sass/index.scss";
 import "bootstrap";
 import "./js/parallax";
 import "./js/scroll";
-// import "./js/slideshow";
-// import "./js/stamps";
+import "./js/slideshow";
+import "./js/stamps";
 
 // can call the const whatever you want
 // finds the div with a class of pixels
 
 // find the body
-const bodyTag = document.querySelector("body");
+// const bodyTag = document.querySelector("body.spring");
+// console.log(bodyTag);
 const progressTag = document.querySelector("div.progress");
 const sections = document.querySelectorAll(".hero-sec");
 // using querySelector just selects the one
@@ -25,9 +26,11 @@ const animatedTags = document.querySelectorAll(
 
 const menuToggle = document.querySelector(".menu-toggle img");
 const menu = document.querySelector(".menu");
-menuToggle.addEventListener("click", (e) => {
-  menu.classList.toggle("open");
-});
+if (menu) {
+  menuToggle.addEventListener("click", (e) => {
+    menu.classList.toggle("open");
+  });
+}
 
 // PROGRESS BARS
 // when we scroll the page, make a progress bar that keeps track of the distance
@@ -35,19 +38,20 @@ document.addEventListener("scroll", function () {
   // fine to use pixels again as the constant
   // because it's in the same box
   const pixels = window.pageYOffset;
-
-  // gives you the height of 3200
-  const pageHeight = bodyTag.getBoundingClientRect().height;
-  // find the total scrollable distance which is
-  // page height - window height
-  const totalScrollableDistance = pageHeight - window.innerHeight;
-  // pixels divided by total scrollable distance/entire thing
-  const percentage = pixels / totalScrollableDistance;
-  // gives you scrollbars going down the page
-  // progressTag.style.width = "5px"
-  // progressTag.style.height = `${100 * percentage}%`
-
-  progressTag.style.width = `${100 * percentage}%`;
+  const bodyTag = document.querySelector("body.spring");
+  if (bodyTag) {
+    // gives you the height of 3200
+    const pageHeight = bodyTag.getBoundingClientRect().height;
+    // find the total scrollable distance which is
+    // page height - window height
+    const totalScrollableDistance = pageHeight - window.innerHeight;
+    // pixels divided by total scrollable distance/entire thing
+    const percentage = pixels / totalScrollableDistance;
+    // gives you scrollbars going down the page
+    // progressTag.style.width = "5px"
+    // progressTag.style.height = `${100 * percentage}%`
+    progressTag.style.width = `${100 * percentage}%`;
+  }
 });
 
 // PARALLAX SHAPES
@@ -75,13 +79,16 @@ document.addEventListener("scroll", function () {
 
     const parallaxTags = section.querySelectorAll(`[data-parallax]`);
 
-    // loop over each parallaxed tag
-    parallaxTags.forEach((tag) => {
-      // parseFloat turns it into a decimal number
-      const speed = parseFloat(tag.getAttribute("data-parallax"));
-      // would log "0.15"
-      tag.style.transform = `translate(0, ${distanceToSection * speed}px)`;
-    });
+    if (parallaxTags) {
+      // loop over each parallaxed tag
+      parallaxTags.forEach((tag) => {
+        // parseFloat turns it into a decimal number
+        const speed = parseFloat(tag.getAttribute("data-parallax"));
+        // would log "0.15"
+        tag.style.transform = `translate(0, ${distanceToSection * speed}px)`;
+      });
+    }
+
     // pick the square
     // const tag = section.querySelector("div.square")
     // use the backtick because it's css
@@ -100,7 +107,9 @@ document.addEventListener("scroll", function () {
   // console.log(pixels)
 
   // changes the pixels tag to be the value of the pixels
-  pixelsTag.innerHTML = pixels + "pixels scrolled";
+  if (pixelsTag) {
+    pixelsTag.innerHTML = pixels + "pixels scrolled";
+  }
 
   // pixelsTag.innerHTML = `${pixels} pixels scrolled`
 });

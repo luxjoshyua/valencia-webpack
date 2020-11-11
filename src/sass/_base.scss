@@ -81,7 +81,19 @@ div.progress {
 
 img {
   position: relative;
-  z-index: -2;
+}
+
+.hero-sec {
+  .content {
+    .copy {
+      h2 {
+        position: relative;
+        top: initial;
+        left: initial;
+        z-index: 1;
+      }
+    }
+  }
 }
 
 .menu {
@@ -94,6 +106,7 @@ img {
   height: 100%;
   transform: translateX(100%);
   transition: transform 0.6s ease;
+  z-index: 300;
 }
 
 .open {
@@ -107,6 +120,7 @@ a.menu-toggle {
   right: 30px;
   opacity: 1 !important;
   animation: none !important;
+  z-index: 500;
   img {
     position: relative;
     z-index: 100;
@@ -135,7 +149,7 @@ a.menu-toggle {
 
 .menu-links {
   position: relative;
-  transform: translate(-10%, 50%);
+  transform: translate(-10%, 20%);
 }
 
 ul,
@@ -157,7 +171,7 @@ li a:hover {
 
 div.social-links-nav {
   position: relative;
-  transform: translate(-10%, 215%);
+  transform: translate(-10%, 100%);
 }
 
 .social-links-nav ul li {
@@ -180,9 +194,6 @@ section {
   align-items: center;
 }
 
-section.natural {
-}
-
 @media only screen and (max-width: 760px) {
   .natural {
     justify-content: space-between;
@@ -199,6 +210,7 @@ div.content {
   top: 50%;
   width: 550px;
   transform: translateY(-60%);
+  z-index: 2;
 }
 
 div.copy h2,
@@ -365,4 +377,121 @@ div.stamps img {
   /* centre the img in the middle of where we click */
   transform: translate(-50%, -50%);
   animation: spin 30s linear infinite;
+}
+
+// SPRING
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+header.spring-header {
+  position: fixed;
+  top: 100px;
+  left: 36px;
+  z-index: 1;
+  transition: color 0.5s;
+}
+
+/* this is what we target in the JS */
+header.white {
+  color: #fff;
+}
+
+header h1 {
+  font-size: 34px;
+}
+
+section.spring-sec {
+  background-color: #c8dee0;
+  min-height: 100vh;
+  padding: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+div.content h2 {
+  font-size: 80px;
+  position: absolute;
+  left: 80%;
+  top: 30%;
+  line-height: 1.1;
+  z-index: 2;
+}
+
+/* background colours */
+
+section.s1 {
+  background-color: #c8dee0;
+}
+
+section.s2 {
+  background-color: #ffd5b1;
+}
+
+section.s3 {
+  background-color: #eeeeee;
+}
+
+section.s4 {
+  background-color: #be3c52;
+}
+
+section.s5 {
+  background-color: #ffd363;
+}
+
+section.s6 {
+  background-color: #292121;
+}
+
+/* stamps */
+
+div.stamps {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 50%;
+}
+
+div.stamps img {
+  position: absolute;
+  /* centre the img in the middle of where we click */
+  transform: translate(-50%, -50%);
+  animation: spin 30s linear infinite;
+}
+
+/* progress bar */
+
+div.progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 10px;
+  background-color: #333;
+  /* all elements by default have a z-index of 0  */
+  z-index: 1;
+  transition: background-color 0.5s;
+}
+
+/* this is what we target in the JS for the progress bar */
+div.progress.white {
+  background-color: #fff;
 }

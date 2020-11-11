@@ -28,6 +28,12 @@ p {
   margin: 0;
 }
 
+a {
+  &:hover {
+    color: inherit;
+  }
+}
+
 .container {
   background-color: lightgreen;
   div {
